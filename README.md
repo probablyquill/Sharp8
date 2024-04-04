@@ -1,4 +1,4 @@
-# PythonC8
+# SharpC8
 A rewrite of my [Python Chip-8 Emulator](https://github.com/probablyquill/PythonC8) using C# and monogame.
 
 Requires dotnet version 6.0 and Monogame.
