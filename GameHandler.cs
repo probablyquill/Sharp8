@@ -11,6 +11,7 @@ namespace SharpC8
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
         private Chip8 chip8 = new Chip8();
+        float deltaTime;
         
 
         public GameHandler()
@@ -18,7 +19,7 @@ namespace SharpC8
             _graphics = new GraphicsDeviceManager(this);
             _graphics.SynchronizeWithVerticalRetrace = false;
             this.IsFixedTimeStep = true;
-            this.TargetElapsedTime = TimeSpan.FromSeconds(1.0f / 50.0f);
+            this.TargetElapsedTime = TimeSpan.FromSeconds(1.0f / 999.0f);
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
         }
@@ -51,12 +52,18 @@ namespace SharpC8
 
         protected override void Update(GameTime gameTime)
         {
+            
             _graphics.SynchronizeWithVerticalRetrace = false;
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
             // TODO: Add your update logic here
-            chip8.EmulateCycle();
+            deltaTime = (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            if (true) {
+                chip8.EmulateCycle();
+
+                //TODO: Implement drawFlag to manage rendering.
+            }
 
             base.Update(gameTime);
         }
@@ -68,7 +75,7 @@ namespace SharpC8
             // TODO: Add your drawing code here
             Rectangle rect;
             Texture2D colorPixel = new Texture2D(GraphicsDevice, 1, 1);
-
+            byte[] checkDraw = chip8.gfx;
             int multi = 10;
             _spriteBatch.Begin();
             Console.WriteLine(chip8.gfx.Length);

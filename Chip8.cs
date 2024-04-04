@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace SharpC8;
 public  class Chip8 {
     //Setup for various variables needed for the CPU to cycle.
-    public bool drawFlag = true;
+    public bool drawFlag = false;
     private short opcode = 0;
     private byte[] registers = new byte[16];
     private byte[] memory = new byte[2048];
