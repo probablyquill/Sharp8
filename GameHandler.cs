@@ -6,14 +6,14 @@ using System.IO;
 
 namespace SharpC8
 {
-    public class Game1 : Game
+    public class GameHandler : Game
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
         private Chip8 chip8 = new Chip8();
         
 
-        public Game1()
+        public GameHandler()
         {
             _graphics = new GraphicsDeviceManager(this);
             _graphics.SynchronizeWithVerticalRetrace = false;

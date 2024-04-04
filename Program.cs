@@ -1,3 +1,3 @@
 ﻿
-using var game = new SharpC8.Game1();
+using var game = new SharpC8.GameHandler();
 game.Run();
