@@ -14,7 +14,7 @@ If this is a project you would like to undertake for yourself, I primarily used 
 [How to write an emulator (CHIP-8 interpreter) by Laurence Muller](https://multigesture.net/articles/how-to-write-an-emulator-chip-8-interpreter/)
 
 
-## Install guide:
+## Requirements:
 Install [Monogame](https://monogame.net/articles/getting_started/index.html)
 
 ## Launch:
